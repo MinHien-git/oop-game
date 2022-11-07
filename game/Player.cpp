@@ -48,3 +48,11 @@ void Player::PlayerMovement()
         this->setPoint(currentX, currentY);
     }
 }
+
+void Player::Destroy() {
+    isDestroy = true;
+}
+
+bool Player::CompleteLevel() {
+    return isDestroy;
+}

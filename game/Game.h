@@ -2,21 +2,26 @@
 
 #include<iostream>
 #include"Level.h"
+#include<Windows.h>
 
 using namespace std;
 
 enum GAMESTATE {
 	PAUSE,
 	START,
-	END,
-	MENU
+	MENU,
+	EXIT
 };
 
 class Game {
 	GAMESTATE currentState = MENU;
 	Level level;
+	int score;
+public:
 	void Start();
 	void Pause();
 	void Exit();
-	void End();
+	void SaveFile();
+	void StartProgram();
+	void Menu();
 };
