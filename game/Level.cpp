@@ -16,11 +16,7 @@ void Level::DrawGrid() {
 
 void Level::VehicleLine(deque<int>& vect,int index) {
     vect[9] = 1;
-    for (int i = 0; i < 10; ++i)
-    {
-        cout << vect[i] << " ";
-    }
-    while (true)
+    while (gameState == PROCESSING)
     {
         fflush(stdin);
         sleep_for(milliseconds(1000));
@@ -39,14 +35,16 @@ void Level::VehicleLine(deque<int>& vect,int index) {
             if(grid[index][x + 1] == 0)
                 grid[index][x+1] = 2;
             else {
+                gameState = ENDED;
                 break;
             }
         }
     }
+    cout << "Player got hit";
 }
 
 void Level::UpdateGrid() {
-    while (true)
+    while (gameState == PROCESSING)
     {
         fflush(stdin);
         sleep_for(milliseconds(900));
@@ -77,7 +75,7 @@ void Level::HandlePlayerMovementOnGrid() {
     int c;
     int x = player.getX();
     int y = player.getY();
-    while (true) {
+    while (gameState == PROCESSING) {
         c = 0;
         switch (c = _getch())
         {

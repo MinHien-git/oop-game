@@ -11,9 +11,16 @@ using namespace std;
 using namespace std::chrono;
 using namespace std::this_thread;
 
+enum INGAMESTATE {
+    PAUSED,
+    PROCESSING,
+    ENDED,
+};
+
 class Level {
     deque<deque<int>> grid = deque<deque<int>>(10, deque<int>(10, 0));
     Player player;
+    INGAMESTATE gameState = PROCESSING;
 public:
     Level();
 
