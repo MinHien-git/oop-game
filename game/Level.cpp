@@ -160,7 +160,7 @@ void Level::SavePlayer() {
 //Spaw random obstacle line from start to end with the limit
 //return array of int which will become line of obstacle
 int* Level::DynamicSpawn(int start, int end,int limit = 4) {
-    
+    return nullptr;
 }
 
 

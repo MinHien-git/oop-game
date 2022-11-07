@@ -40,7 +40,7 @@ public:
     void HandlePlayerMovementOnGrid();
     void SavePlayer();
 
-    int* DynamicSpawn(int start,int end,int limit = 4);
+    int* DynamicSpawn(int start,int end,int limit);
     
     bool LevelIsComplete();
     bool PlayerCompleteLevel();

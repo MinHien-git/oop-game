@@ -22,7 +22,7 @@ void Game::Exit() {
 void Game::Menu() {
 	currentState = MENU;
 	int ch;
-	while (ch = getch()) {
+	while (ch = _getch()) {
 		switch (ch)
 		{
 			case 1:case2:case 3:
